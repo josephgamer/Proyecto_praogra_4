@@ -67,6 +67,14 @@ public class Profesor {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Usuario getUsuario_id() {
+        return usuario_id;
+    }
+
+    public void setUsuario_id(Usuario usuario_id) {
+        this.usuario_id = usuario_id;
+    }
     
     private int id_profesor;
     private String apellido1;
@@ -74,4 +82,5 @@ public class Profesor {
     private String nombre;
     private String telefono;
     private String email;
+    private Usuario usuario_id;
 }

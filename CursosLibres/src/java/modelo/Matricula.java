@@ -53,9 +53,27 @@ public class Matricula {
     public void setNota(int nota) {
         this.nota = nota;
     }
+
+    public Estudiante getEstudiante_id() {
+        return estudiante_id;
+    }
+
+    public void setEstudiante_id(Estudiante estudiante_id) {
+        this.estudiante_id = estudiante_id;
+    }
+
+    public Estado getEstado_id() {
+        return estado_id;
+    }
+
+    public void setEstado_id(Estado estado_id) {
+        this.estado_id = estado_id;
+    }
     
     private int matricula_id;
     private int grupo_num;
     private int curso_id;
     private int nota;
+    private Estudiante estudiante_id;
+    private Estado estado_id;
 }

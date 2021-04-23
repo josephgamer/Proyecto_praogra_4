@@ -8,30 +8,32 @@ package modelo;
 
 public class Especialidad {
 
-    public Especialidad(int profe_id_profe, int area_tematica_id) {
+    public Especialidad(Profesor profe_id_profe, AreaTematica area_tematica_id) {
         this.profe_id_profe = profe_id_profe;
         this.area_tematica_id = area_tematica_id;
     }
 
     public Especialidad() {
+        this.area_tematica_id = new AreaTematica();
+        this.profe_id_profe = new Profesor();
     }
 
-    public int getProfe_id_profe() {
+    public Profesor getProfe_id_profe() {
         return profe_id_profe;
     }
 
-    public void setProfe_id_profe(int profe_id_profe) {
+    public void setProfe_id_profe(Profesor profe_id_profe) {
         this.profe_id_profe = profe_id_profe;
     }
 
-    public int getArea_tematica_id() {
+    public AreaTematica getArea_tematica_id() {
         return area_tematica_id;
     }
 
-    public void setArea_tematica_id(int area_tematica_id) {
+    public void setArea_tematica_id(AreaTematica area_tematica_id) {
         this.area_tematica_id = area_tematica_id;
     }
     
-    private int profe_id_profe;
-    private int area_tematica_id;
+    private Profesor profe_id_profe;
+    private AreaTematica area_tematica_id;
 }

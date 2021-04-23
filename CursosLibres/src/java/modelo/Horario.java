@@ -8,7 +8,7 @@ package modelo;
 
 public class Horario {
 
-    public Horario(int seq, int grupo_num, int grupo_curso_id, int dia, int hora) {
+    public Horario(int seq, Grupo grupo_num, Curso grupo_curso_id, int dia, int hora) {
         this.seq = seq;
         this.grupo_num = grupo_num;
         this.grupo_curso_id = grupo_curso_id;
@@ -16,10 +16,16 @@ public class Horario {
         this.hora = hora;
     }
 
+    public Horario(int seq, int dia, int hora) {
+        this.seq = seq;
+        this.dia = dia;
+        this.hora = hora;
+    }
+
     public Horario() {
         this.seq = 0;
-        this.grupo_num = 0;
-        this.grupo_curso_id = 0;
+        this.grupo_num = new Grupo();
+        this.grupo_curso_id = new Curso();
         this.dia = 0;
         this.hora = 0;
     }
@@ -32,19 +38,19 @@ public class Horario {
         this.seq = seq;
     }
 
-    public int getGrupo_num() {
+    public Grupo getGrupo_num() {
         return grupo_num;
     }
 
-    public void setGrupo_num(int grupo_num) {
+    public void setGrupo_num(Grupo grupo_num) {
         this.grupo_num = grupo_num;
     }
 
-    public int getGrupo_curso_id() {
+    public Curso getGrupo_curso_id() {
         return grupo_curso_id;
     }
 
-    public void setGrupo_curso_id(int grupo_curso_id) {
+    public void setGrupo_curso_id(Curso grupo_curso_id) {
         this.grupo_curso_id = grupo_curso_id;
     }
 
@@ -65,8 +71,8 @@ public class Horario {
     }
     
     private int seq;
-    private int grupo_num;
-    private int grupo_curso_id;
+    private Grupo grupo_num;
+    private Curso grupo_curso_id;
     private int dia;
     private int hora;
 }

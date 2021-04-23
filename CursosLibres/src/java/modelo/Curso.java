@@ -33,7 +33,16 @@ public class Curso {
     public void setCurso_descrip(String curso_descrip) {
         this.curso_descrip = curso_descrip;
     }
+
+    public AreaTematica getAreaTematica_id() {
+        return areaTematica_id;
+    }
+
+    public void setAreaTematica_id(AreaTematica areaTematica_id) {
+        this.areaTematica_id = areaTematica_id;
+    }
     
     private int id_curso;
     private String curso_descrip;
+    private AreaTematica areaTematica_id;
 }

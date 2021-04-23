@@ -74,6 +74,15 @@ public class Administrador {
         this.email = email;
     }
 
+    public Usuario getUsuario_id() {
+        return usuario_id;
+    }
+
+    public void setUsuario_id(Usuario usuario_id) {
+        this.usuario_id = usuario_id;
+    }
+    
+
     @Override
     public String toString() {
         return "Administrador{" + "id_admin=" + id_admin + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", nombre=" + 
@@ -86,4 +95,5 @@ public class Administrador {
     private String nombre;
     private String telefono;
     private String email;
+    private Usuario usuario_id;
 }

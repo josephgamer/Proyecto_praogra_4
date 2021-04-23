@@ -70,6 +70,14 @@ public class Estudiante {
         return email;
     }
 
+    public Usuario getUsuario_id() {
+        return usuario_id;
+    }
+
+    public void setUsuario_id(Usuario usuario_id) {
+        this.usuario_id = usuario_id;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -80,4 +88,5 @@ public class Estudiante {
     private String nombre;
     private String telefono;
     private String email;
+    private Usuario usuario_id;
 }

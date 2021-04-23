@@ -8,13 +8,17 @@ package modelo;
 
 public class Grupo {
 
-    public Grupo(int num_grupo, int curso_id) {
+    public Grupo(int num_grupo) {
+        this.num_grupo = num_grupo;
+    }
+    
+    public Grupo(int num_grupo, Curso curso_id) {
         this.num_grupo = num_grupo;
         this.curso_id = curso_id;
     }
 
     public Grupo() {
-        this.curso_id = 0;
+        this.curso_id = new Curso();
         this.num_grupo = 0;
     }
 
@@ -26,14 +30,23 @@ public class Grupo {
         this.num_grupo = num_grupo;
     }
 
-    public int getCurso_id() {
+    public Curso getCurso_id() {
         return curso_id;
     }
 
-    public void setCurso_id(int curso_id) {
+    public void setCurso_id(Curso curso_id) {
         this.curso_id = curso_id;
+    }
+
+    public Profesor getProfesor_id() {
+        return profesor_id;
+    }
+
+    public void setProfesor_id(Profesor profesor_id) {
+        this.profesor_id = profesor_id;
     }
     
     private int num_grupo;
-    private int curso_id;
+    private Curso curso_id;
+    private Profesor profesor_id;
 }

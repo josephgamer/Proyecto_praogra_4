@@ -55,9 +55,18 @@ public class Usuario {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
+    public Rol getRol_id() {
+        return rol_id;
+    }
+
+    public void setRol_id(Rol rol_id) {
+        this.rol_id = rol_id;
+    }
     
     private String id_usuario;
     private String clave;
     private Date ultimo_acceso;
     private boolean activo;
+    private Rol rol_id;
 }
