@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Curso {
+
+public class Curso implements Serializable{
 
     public Curso(int id_curso, String curso_descrip) {
         this.id_curso = id_curso;
@@ -41,6 +43,13 @@ public class Curso {
     public void setAreaTematica_id(AreaTematica areaTematica_id) {
         this.areaTematica_id = areaTematica_id;
     }
+
+    @Override
+    public String toString() {
+        return "Curso{" + "id_curso=" + id_curso + ", curso_descrip=" + curso_descrip + ", areaTematica_id=" + areaTematica_id + '}';
+    }
+    
+    
     
     private int id_curso;
     private String curso_descrip;

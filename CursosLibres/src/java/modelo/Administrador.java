@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Administrador {
+
+public class Administrador implements Serializable{
 
     public Administrador(int id_admin, String apellido1, String apellido2, String nombre, String telefono, String email) {
         this.id_admin = id_admin;

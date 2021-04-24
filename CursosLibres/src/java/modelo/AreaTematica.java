@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class AreaTematica {
+
+public class AreaTematica implements Serializable {
 
     public AreaTematica(int id_area, String tematica_descrip) {
         this.id_area = id_area;
@@ -32,6 +34,11 @@ public class AreaTematica {
 
     public void setTematica_descrip(String tematica_descrip) {
         this.tematica_descrip = tematica_descrip;
+    }
+
+    @Override
+    public String toString() {
+        return "AreaTematica{" + "id_area=" + id_area + ", tematica_descrip=" + tematica_descrip + '}';
     }
     
     private int id_area;

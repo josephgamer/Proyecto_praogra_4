@@ -5,10 +5,11 @@
  */
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
-public class Usuario {
+public class Usuario implements Serializable {
 
     public Usuario(String id_usuario, String clave, Date ultimo_acceso, boolean activo) {
         this.id_usuario = id_usuario;
@@ -63,6 +64,13 @@ public class Usuario {
     public void setRol_id(Rol rol_id) {
         this.rol_id = rol_id;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id_usuario=" + id_usuario + ", clave=" + clave + ", ultimo_acceso=" + ultimo_acceso + ", activo=" + activo + ", rol_id=" + rol_id + '}';
+    }
+    
+    
     
     private String id_usuario;
     private String clave;

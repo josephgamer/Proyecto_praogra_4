@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Matricula {
+
+public class Matricula implements Serializable{
 
     public Matricula() {
         this.matricula_id = 0;
@@ -69,6 +71,13 @@ public class Matricula {
     public void setEstado_id(Estado estado_id) {
         this.estado_id = estado_id;
     }
+
+    @Override
+    public String toString() {
+        return "Matricula{" + "matricula_id=" + matricula_id + ", grupo_num=" + grupo_num + ", curso_id=" + curso_id + ", nota=" + nota + ", estudiante_id=" + estudiante_id + ", estado_id=" + estado_id + '}';
+    }
+    
+    
     
     private int matricula_id;
     private int grupo_num;
