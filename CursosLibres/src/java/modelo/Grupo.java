@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Grupo {
+
+public class Grupo implements Serializable{
 
     public Grupo(int num_grupo) {
         this.num_grupo = num_grupo;
@@ -45,6 +47,13 @@ public class Grupo {
     public void setProfesor_id(Profesor profesor_id) {
         this.profesor_id = profesor_id;
     }
+
+    @Override
+    public String toString() {
+        return "Grupo{" + "num_grupo=" + num_grupo + ", curso_id=" + curso_id + ", profesor_id=" + profesor_id + '}';
+    }
+    
+    
     
     private int num_grupo;
     private Curso curso_id;

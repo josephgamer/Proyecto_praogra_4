@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27 abr. 2021, 11:38:56
+    Author     : YENDRI
+*/
+
+.historial {
+    border: none;
+    border-top: 2px solid darkslategrey;
+    border-bottom: 2px solid darkslategrey;
+    border-collapse: collapse;
+    font-size: smaller;
+}
+
+.historial th,
+.historial td {
+    border: none;
+    border-right: 1px solid darkslategrey;
+    padding: 4px 12px;
+}
+
+.historial tr td:nth-child(n+5) {
+    border-right: none;
+}
+
+.historial tbody tr:nth-child(odd) {
+    background-color: #b8c8d1;
+}
+
+.historial th {
+    background-color: darkslategrey;
+    border: none;
+    color: white;
+}
+
+.historial td {
+}

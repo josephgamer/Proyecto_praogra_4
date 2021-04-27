@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Rol {
+
+public class Rol implements Serializable {
 
     public Rol(int id_rol, String descripcion) {
         this.id_rol = id_rol;
@@ -33,6 +35,13 @@ public class Rol {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    @Override
+    public String toString() {
+        return "Rol{" + "id_rol=" + id_rol + ", descripcion=" + descripcion + '}';
+    }
+    
+    
     
     private int id_rol;
     private String descripcion;

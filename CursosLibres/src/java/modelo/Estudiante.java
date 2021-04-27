@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Estudiante {
+
+public class Estudiante implements Serializable {
 
     public Estudiante(int id_estudiante, String apellido1, String apellido2, String nombre, String telefono, String email) {
         this.id_estudiante = id_estudiante;
@@ -81,6 +83,13 @@ public class Estudiante {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" + "id_estudiante=" + id_estudiante + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", nombre=" + nombre + ", telefono=" + telefono + ", email=" + email + ", usuario_id=" + usuario_id + '}';
+    }
+    
+    
     
     private int id_estudiante;
     private String apellido1;

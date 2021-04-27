@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Especialidad {
+
+public class Especialidad implements Serializable {
 
     public Especialidad(Profesor profe_id_profe, AreaTematica area_tematica_id) {
         this.profe_id_profe = profe_id_profe;
@@ -33,6 +35,13 @@ public class Especialidad {
     public void setArea_tematica_id(AreaTematica area_tematica_id) {
         this.area_tematica_id = area_tematica_id;
     }
+
+    @Override
+    public String toString() {
+        return "Especialidad{" + "profe_id_profe=" + profe_id_profe + ", area_tematica_id=" + area_tematica_id + '}';
+    }
+    
+    
     
     private Profesor profe_id_profe;
     private AreaTematica area_tematica_id;

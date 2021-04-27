@@ -5,8 +5,10 @@
  */
 package modelo;
 
+import java.io.Serializable;
 
-public class Estado {
+
+public class Estado implements Serializable {
 
     public Estado(int id_estado, String est_descripcion) {
         this.id_estado = id_estado;
@@ -33,6 +35,13 @@ public class Estado {
     public void setEst_descripcion(String est_descripcion) {
         this.est_descripcion = est_descripcion;
     }
+
+    @Override
+    public String toString() {
+        return "Estado{" + "id_estado=" + id_estado + ", est_descripcion=" + est_descripcion + '}';
+    }
+    
+    
     
     private int id_estado;
     private String est_descripcion;
