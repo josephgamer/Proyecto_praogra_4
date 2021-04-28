@@ -4,11 +4,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 27 abr. 2021, 12:20:02
+    Created on : 28 abr. 2021, 16:57:29
     Author     : YENDRI
 */
 
-.listadoProfesor {
+.listadoCurso {
     border: none;
     border-top: 2px solid darkslategrey;
     border-bottom: 2px solid darkslategrey;
@@ -16,26 +16,26 @@ and open the template in the editor.
     font-size: smaller;
 }
 
-.listadoProfesor th,
-.listadoProfesor td {
+.listadoCurso th,
+.listadoCurso td {
     border: none;
     border-right: 1px solid darkslategrey;
     padding: 4px 12px;
 }
 
-.listadoProfesor tr td:nth-child(n+5) {
+.listadoCurso tr td:nth-child(n+5) {
     border-right: none;
 }
 
-.listadoProfesor tbody tr:nth-child(odd) {
+.listadoCurso tbody tr:nth-child(odd) {
     background-color: #b8c8d1;
 }
 
-.listadoProfesor th {
+.listadoCurso th {
     background-color: darkslategrey;
     border: none;
     color: white;
 }
 
-.listadoProfesor td {
+.listadoCurso td {
 }

@@ -19,27 +19,26 @@ import modelo.beans.Curso;
  *
  * @author YENDRI
  */
-@WebServlet(name = "ServicioHistorial", urlPatterns = {"/ServicioHistorial"})
-public class ServicioHistorial extends HttpServlet {
+@WebServlet(name = "ServicioListadoCurso", urlPatterns = {"/ServicioListadoCurso"})
+public class ServicioListadoCurso extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        System.out.println("Servlet ServicioHistorial..");
+        System.out.println("Servlet ServicioListadoCurso..");
 
         try {
             Curso c = new Curso(
                     Integer.parseInt(request.getParameter("id")),
-                    request.getParameter("descripción"));
-      
+                    request.getParameter("descripcion"));
 
             ConjuntoCurso cursos
                     = (ConjuntoCurso) getServletContext().getAttribute("cursos");
             cursos.agregar(c);
             System.out.println(cursos);
 
-            response.sendRedirect("historial.jsp");
+            response.sendRedirect("listadoCurso.jsp");
 
         } catch (IOException | NumberFormatException | SQLException ex) {
             System.err.printf("Excepción: '%s'%n", ex.getMessage());
@@ -62,7 +61,7 @@ public class ServicioHistorial extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "ServicioHistorial";
+        return "ServicioListadoCurso";
     }
 
 }
