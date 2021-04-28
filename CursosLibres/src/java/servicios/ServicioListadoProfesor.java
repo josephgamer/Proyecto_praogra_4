@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Curso;
 import modelo.beans.Profesor;
+import modelo.beans.ConjuntoProfesor;
 
 /**
  *
