@@ -1,6 +1,6 @@
 <%-- 
-    Document   : registro
-    Created on : 27 abr. 2021, 11:05:34
+    Document   : registroProfesor
+    Created on : 28 abr. 2021, 17:26:04
     Author     : YENDRI
 --%>
 
@@ -9,12 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Página de registro</title>
-        <link href="css/registro.css" rel="stylesheet" type="text/css"/>
+        <title>Página de registro de profesor</title>
+        <link href="css/registroProfesor.css" rel="stylesheet" type="text/css"/>
     </head>
     <div id="wrapper">
         <header>
-            <h1>Formulario de registro</h1>
+            <h1>Formulario de registro de profesor</h1>
         </header>
         <table class="formulario">
             <body>
@@ -62,10 +62,17 @@
                 </td>
             </tr>
             <tr>
+                <td class="etiqueta">Especialidad:&nbsp;</td>
+                <td class="campo"> 
+                    <input name="Especialidad" 
+                           placeholder="(especialidad)"/>
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2" class="botones">
                     <button type="reset">Borrar</button>&nbsp;
                     <button type="submit">Registrar</button>
                 </td>
                 </div>
                 </body>
-                </html>
+</html>
