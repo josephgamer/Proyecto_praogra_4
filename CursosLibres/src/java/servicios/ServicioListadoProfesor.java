@@ -5,29 +5,41 @@
  */
 package servicios;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import modelo.Curso;
+import modelo.beans.Profesor;
 
 /**
  *
  * @author YENDRI
  */
-//@WebServlet(name = "ServicioHistorial", urlPatterns = {"/ServicioHistorial"})
-//public class ServicioHistorial extends HttpServlet {
-//
+
+@WebServlet(name = "ServicioListadoProfesor", urlPatterns = {"/ServicioListadoProfesor"})
+public class ServicioListadoProfesor extends HttpServlet {
+
 //    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 //            throws ServletException, IOException {
 //        response.setContentType("text/html;charset=UTF-8");
 //
-//        System.out.println("Servlet ServicioHistorial..");
+//        System.out.println("Servlet ServicioListadoProfesor..");
 //
 //        try {
-//            Curso c = new Curso(
+//            Profesor p = new Profesor(
 //                    Integer.parseInt(request.getParameter("id")),
-//                    request.getParameter("descripción"));
+//                    request.getParameter("apellido1"),
+//                    request.getParameter("apellido2"),
+//                    request.getParameter("nombre"),
+//                    request.getParameter("correo"),
+//                    request.getParameter("telefono"));
 //      
-//
-//            ConjuntoPersonas personas
+//            ConjuntoProfesor personas
 //                    = (ConjuntoPersonas) getServletContext().getAttribute("cursos");
 //            personas.agregar(c);
 //            System.out.println(personas);
@@ -57,5 +69,7 @@ import javax.servlet.http.HttpServlet;
 //    public String getServletInfo() {
 //        return "ServicioHistorial";
 //    }
-//
-//}
+
+}
+
+
