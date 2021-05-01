@@ -13,6 +13,8 @@
         <link href="css/listadoCurso
     <table class="listadoCurso">
     <body>
+        <jsp:useBean id="cursos" class="modelo.beans.ConjuntoCurso" scope="application">
+        </jsp:useBean>
         <div id="wrapper">
             <header>
                 <h1>Listado de cursos</h1>
@@ -23,7 +25,7 @@
 
                 <%-- <jsp:getProperty name="personas" property="tabla"></jsp:getProperty> --%>
                 <%-- <%= ((modelo.beans.ConjuntoPersonas) getServletContext().getAttribute("personas")).getTabla()%> --%>
-                ${personas.tabla}
+                ${cursos.tabla}
 
             </div>
             <div style="margin-top: 24px;">
