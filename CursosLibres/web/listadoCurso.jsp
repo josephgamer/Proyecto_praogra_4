@@ -10,8 +10,8 @@
     <head>
         <title>Listado de cursos</title>
         <meta charset="UTF-8">
-        <link href="css/listadoCurso
-    <table class="listadoCurso">
+        <link href="css/listadoCurso.css" rel="stylesheet" type="text/css"/>
+    </head>
     <body>
         <jsp:useBean id="cursos" class="modelo.beans.ConjuntoCurso" scope="application">
         </jsp:useBean>
