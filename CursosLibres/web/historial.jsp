@@ -12,8 +12,9 @@
         <meta charset="UTF-8">
         <link href="css/historial.css" rel="stylesheet" type="text/css"/>
     </head>
-    <table class="historial">
     <body>
+        <jsp:useBean id="h" class="modelo.beans.ConjuntoCurso" scope="application">
+        </jsp:useBean>
         <div id="wrapper">
             <header>
                 <h1>Historial de cursos</h1>
@@ -22,9 +23,7 @@
                 <!-- Un comentario HTML -->
                 <%-- Un comentario JSP --%>
 
-                <%-- <jsp:getProperty name="personas" property="tabla"></jsp:getProperty> --%>
-                <%-- <%= ((modelo.beans.ConjuntoPersonas) getServletContext().getAttribute("personas")).getTabla()%> --%>
-                ${personas.tabla}
+                ${h.tabla}
 
             </div>
             <div style="margin-top: 24px;">

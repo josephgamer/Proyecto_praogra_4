@@ -10,9 +10,11 @@
     <head>
         <title>Listado de profesores</title>
         <meta charset="UTF-8">
-        <link href="css/historiallistadoProfesor
-    <table class="listadoProfesor">
+        <link href="css/listadoProfesor.css" rel="stylesheet" type="text/css"/>
+    </head>
     <body>
+        <jsp:useBean id="profesor" class="modelo.beans.ConjuntoProfesor" scope="application">
+        </jsp:useBean>
         <div id="wrapper">
             <header>
                 <h1>Listado de profesores</h1>
@@ -21,9 +23,10 @@
                 <!-- Un comentario HTML -->
                 <%-- Un comentario JSP --%>
 
-                <%-- <jsp:getProperty name="personas" property="tabla"></jsp:getProperty> --%>
-                <%-- <%= ((modelo.beans.ConjuntoPersonas) getServletContext().getAttribute("personas")).getTabla()%> --%>
-                ${personas.tabla}
+                <%-- <jsp:getProperty name="profesores" property="tabla"></jsp:getProperty> --%>
+                <%-- <%= ((modelo.beans.ConjuntoProfesor) getServletContext().getAttribute("profesores")).getTabla()%> --%>
+                
+                ${profesor.tabla}
 
             </div>
             <div style="margin-top: 24px;">

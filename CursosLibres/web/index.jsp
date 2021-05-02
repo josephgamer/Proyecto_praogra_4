@@ -39,7 +39,7 @@
     </body>
     <nav>
         <p>
-            <a href="listadoCurso.jsp">Página de registro</a>
+            <a href="listadoProfesor.jsp">Página de registro</a>
         </p>
     </nav> 
 </html>
