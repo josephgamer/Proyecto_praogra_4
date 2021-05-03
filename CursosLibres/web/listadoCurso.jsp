@@ -20,23 +20,18 @@
                 <h1>Listado de cursos</h1>
             </header>
             <div id="etiquetas">
-                <form method="GET">
+                <form method="GET" action="ResultadoAreaTematica.jsp">
                     <p class="let">
                         <label type="label" name="area_tematica">
-                            Area tematica:
+                            Digite el area temática o nombre del curso:
                         </label>
-                        <input type="text" name="area_tematica" placeholder="Escriba area tematica"/>
+                        <input type="text" name="area_tematica"/>
 
 
                         <button type="submit">Buscar</button>
 
                     </p>
 
-                    <%
-                    String botonBuscar = request.getParameter("area_tematica");
-                    
-                    out.println(botonBuscar);
-                    %>
 
                 </form>
             </div>
