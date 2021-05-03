@@ -19,13 +19,34 @@
             <header>
                 <h1>Listado de cursos</h1>
             </header>
+            <div id="etiquetas">
+                <form method="GET">
+                    <p class="let">
+                        <label type="label" name="area_tematica">
+                            Area tematica:
+                        </label>
+                        <input type="text" name="area_tematica" placeholder="Escriba area tematica"/>
+
+
+                        <button type="submit">Buscar</button>
+
+                    </p>
+
+                    <%
+                    String botonBuscar = request.getParameter("area_tematica");
+                    
+                    out.println(botonBuscar);
+                    %>
+
+                </form>
+            </div>
             <div id="contents">
                 <!-- Un comentario HTML -->
                 <%-- Un comentario JSP --%>
 
                 <%-- <jsp:getProperty name="personas" property="tabla"></jsp:getProperty> --%>
                 <%-- <%= ((modelo.beans.ConjuntoPersonas) getServletContext().getAttribute("personas")).getTabla()%> --%>
-                
+
                 ${c.tabla}
 
             </div>
