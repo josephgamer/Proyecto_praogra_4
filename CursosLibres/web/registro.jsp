@@ -12,60 +12,77 @@
         <title>Página de registro</title>
         <link href="css/registro.css" rel="stylesheet" type="text/css"/>
     </head>
-    <div id="wrapper">
-        <header>
-            <h1>Formulario de registro</h1>
-        </header>
-        <table class="formulario">
-            <body>
-            <tr>
-                <td class="etiqueta">Id:&nbsp;</td>
-                <td class="campo">  
-                    <input type="number" name="Id"
-                           min=100010001 max=999999999
-                           placeholder="(id)"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="etiqueta">Apellido 1:&nbsp;</td>
-                <td class="campo"> 
-                    <input name="Apellido1"
-                           placeholder="(primer apellido)"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="etiqueta">Apellido 2:&nbsp;</td>
-                <td class="campo">  
-                    <input name="Apellido2" 
-                           placeholder="(segundo apellido)"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="etiqueta">Nombre:&nbsp;</td>
-                <td class="campo">
-                    <input name="Nombre" 
-                           placeholder="(nombre)"/> 
-                </td>
-            </tr>
-            <tr>
-                <td class="etiqueta">Correo:&nbsp;</td>
-                <td class="campo"> 
-                    <input name="Correo" 
-                           placeholder="(correo)"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="etiqueta">Telefono:&nbsp;</td>
-                <td class="campo"> 
-                    <input name="Telefono" 
-                           placeholder="(telefono)"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" class="botones">
-                    <button type="reset">Borrar</button>&nbsp;
-                    <button type="submit">Registrar</button>
-                </td>
-                </div>
-                </body>
-                </html>
+    <body>
+        <jsp:useBean id="estudiantes" class="modelo.beans.ConjuntoEstudiantes" scope="application">
+        </jsp:useBean>
+        <div id="wrapper">
+            <header>
+                <h1>Formulario de registro</h1>
+            </header>
+            <form method="GET" action="RegistroEstudiante">
+                <table class="formulario" action="RegistroEstudiante">
+
+                    <tr>
+                        <td class="etiqueta">Id:&nbsp;</td>
+                        <td class="campo">  
+                            <input type="number" name="Id"
+                                   min=100010001 max=999999999
+                                   placeholder="(id)"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="etiqueta">Apellido 1:&nbsp;</td>
+                        <td class="campo"> 
+                            <input name="Apellido1"
+                                   placeholder="(primer apellido)"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="etiqueta">Apellido 2:&nbsp;</td>
+                        <td class="campo">  
+                            <input name="Apellido2" 
+                                   placeholder="(segundo apellido)"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="etiqueta">Nombre:&nbsp;</td>
+                        <td class="campo">
+                            <input name="Nombre" 
+                                   placeholder="(nombre)"/> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="etiqueta">Correo:&nbsp;</td>
+                        <td class="campo"> 
+                            <input name="Correo" 
+                                   placeholder="(correo)"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="etiqueta">Telefono:&nbsp;</td>
+                        <td class="campo"> 
+                            <input name="Telefono" 
+                                   placeholder="(telefono)"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="etiqueta">Contraseña:&nbsp;</td>
+                        <td class="campo"> 
+                            <input name="Contrasena" type="password" 
+                                   placeholder="Escriba una contraseña"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="botones">
+                            <button type="submit">Registrar</button>
+                        </td>
+                    <p>
+                        <a href="index.jsp" >Volver al login</a>
+                    </p>
+
+
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

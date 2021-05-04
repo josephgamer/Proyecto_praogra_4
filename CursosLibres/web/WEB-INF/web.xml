@@ -4,9 +4,17 @@
         <servlet-name>ServicioHistorial</servlet-name>
         <servlet-class>servicios.ServicioHistorial</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegistroEstudiante</servlet-name>
+        <servlet-class>servicios.RegistroEstudiante</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioHistorial</servlet-name>
         <url-pattern>/ServicioHistorial</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroEstudiante</servlet-name>
+        <url-pattern>/RegistroEstudiante</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

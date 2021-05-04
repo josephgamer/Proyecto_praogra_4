@@ -14,8 +14,8 @@ form {
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
+  width: 50%;
+  padding: 6px 10px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -26,11 +26,11 @@ input[type=text], input[type=password] {
 button {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
+  padding: 10px 16px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
 }
 
 /* Add a hover effect for buttons */
@@ -48,7 +48,7 @@ button:hover {
 /* Center the avatar image inside this container */
 .imgcontainer {
   text-align: center;
-  margin: 24px 0 12px 0;
+  margin: 12px 0 6px 0;
 }
 
 /* Avatar image */
@@ -59,23 +59,23 @@ img.avatar {
 
 /* Add padding to containers */
 .container {
-  padding: 16px;
+  padding: 6px;
 }
 
 /* The "Forgot password" text */
 span.psw {
   float: right;
-  padding-top: 16px;
+  padding-top: 6px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 100px) {
   span.psw {
     display: block;
     float: none;
   }
   .cancelbtn {
-    width: 100%;
+    width: 50%;
   }
   
   #wrapper {
@@ -84,12 +84,12 @@ span.psw {
 }
 
 #contents {
-    padding: 4px 24px;
+    padding: 4px 15px;
 }
 
 header {
     background-color: slategray;
-    padding: 4px 24px;
+    padding: 4px 15px;
 }
 
 header h1 {
