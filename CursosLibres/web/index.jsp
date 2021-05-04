@@ -13,7 +13,7 @@
         <link href="css/default.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form action="action_page.php" method="post">
+        <form action="ServicioLogin" method="post">
             <div class="imgcontainer">
                 <img src="images/descarga.png" alt="Avatar" class="avatar">
             </div>
@@ -21,14 +21,19 @@
             <div class="container">
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" required>
-
+                
+                <p>
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
+                </p>
 
+                
                 <button type="submit">Login</button>
+                <p>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
+                </p>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
@@ -39,7 +44,7 @@
     </body>
     <nav>
         <p>
-            <a href="registro.jsp">Página de registro</a>
+            <a href="historial.jsp">Página de registro</a>
         </p>
     </nav> 
 </html>
