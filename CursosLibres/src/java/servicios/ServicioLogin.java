@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
+import modelo.beans.Usuario;
 
 /**
  *
@@ -52,8 +53,24 @@ public class ServicioLogin extends HttpServlet {
                 
             }
         }
+        
         if (cu.existeUsuario(request.getParameter(username), request.getParameter(password))) {
-            response.sendRedirect("listadoCurso.jsp");
+            Usuario u = new Usuario();
+            u = cu.obtenerRol(request.getParameter(username), request.getParameter(password));
+            switch(u.getRol_id().getId_rol()){
+                case 1: 
+                    response.sendRedirect("listadoCurso.jsp");
+                    break;
+                case 2:
+                    response.sendRedirect("listadoProfesor.jsp");
+                    break;
+                case 3:
+                    response.sendRedirect("listadoCurso.jsp");
+                    break;
+                default:
+                    response.sendRedirect("index.jsp");
+        }
+            
         } else {
             response.sendRedirect("index.jsp");
         }
