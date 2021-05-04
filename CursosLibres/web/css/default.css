@@ -59,7 +59,7 @@ img.avatar {
 
 /* Add padding to containers */
 .container {
-  padding: 6px;
+  padding: 12px;
 }
 
 /* The "Forgot password" text */
@@ -69,7 +69,7 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 100px) {
+@media screen and (max-width: 300px) {
   span.psw {
     display: block;
     float: none;
