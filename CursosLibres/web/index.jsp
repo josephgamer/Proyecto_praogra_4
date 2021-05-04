@@ -29,7 +29,7 @@
 
                 <p></p>
 
-                <button type="submit" style="display: block; margin: 0 auto; width:470px; height:30px">Login</button>
+                <button type="submit" style="display: block; margin: 0 auto; width:200px; height:40px">Login</button>
                 <p>
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
