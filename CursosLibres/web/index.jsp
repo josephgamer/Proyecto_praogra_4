@@ -15,7 +15,7 @@
     <body>
         <form action="ServicioLogin" method="post">
             <div class="imgcontainer">
-                <img src="images/descarga.png" alt="Avatar" class="avatar">
+                <img src="images/descarga.png" alt="Avatar" class="avatar" width="250" height="250">
             </div>
 
             <div class="container">
