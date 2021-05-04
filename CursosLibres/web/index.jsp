@@ -45,7 +45,10 @@
     </body>
     <nav>
         <p>
-            <a href="historial.jsp">Página de registro</a>
+            <a href="registro.jsp">Página de registro</a>
+        </p>
+        <p>
+            <a><a href="VistaCursos.jsp" >Ver lista de cursos</a>
         </p>
     </nav> 
 </html>
