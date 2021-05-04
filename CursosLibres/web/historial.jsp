@@ -28,7 +28,7 @@
             </div>
             <div style="margin-top: 24px;">
                 <form action="ServicioBorrar">
-                    <button>Borrar todos</button>
+                    <button>Descargar Historial</button>
                 </form>
             </div>
             <footer></footer>
