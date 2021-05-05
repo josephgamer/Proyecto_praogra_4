@@ -15,7 +15,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 import java.util.Enumeration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.beans.Estudiante;
+import modelo.beans.Grupo;
+import modelo.beans.Matricula;
 
 /**
  *
@@ -33,13 +39,34 @@ public class ServicioMatricula extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         Enumeration<String> e = request.getParameterNames();
+        String numGrupo = null;
+        String cedula = null;
         while (e.hasMoreElements()) {
             String p = e.nextElement();
-            System.out.println(p);
+            if (cedula == null) {
+                cedula = p;
+                p = null;
+            }
+
+            if (numGrupo == null) {
+                numGrupo = p;
+                p = "";
+
+            }
         }
-        response.sendRedirect("SolicitarMatricula.jsp");
+        modelo.beans.ConjuntoGrupo cg = new modelo.beans.ConjuntoGrupo();
+        modelo.beans.ConjuntoMatricula cm = new modelo.beans.ConjuntoMatricula();
+        Matricula matricula = new Matricula();
+        Grupo g = cg.buscarCurso(Integer.parseInt(request.getParameter(numGrupo)));
+        Estudiante student = new Estudiante();
+        student.setId_estudiante(Integer.parseInt(request.getParameter(cedula)));
+        matricula.setGrupo_num(g.getNum_grupo());
+        matricula.setCurso_id(g.getCurso_id().getId_curso());
+        matricula.setEstudiante_id(student);
+        cm.agregar(matricula);
+        response.sendRedirect("listadoCurso.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -54,7 +81,11 @@ public class ServicioMatricula extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServicioMatricula.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -68,7 +99,11 @@ public class ServicioMatricula extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ServicioMatricula.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
