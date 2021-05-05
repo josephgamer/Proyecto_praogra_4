@@ -27,9 +27,9 @@
 
             </div>
             <div style="margin-top: 24px;">
-                <form action="ServicioBorrar">
-                    <button>Descargar Historial</button>
-                </form>
+
+                <a href="VerificarHistorial.jsp" target="target">Descargar Historial</a>
+
             </div>
             <footer></footer>
         </div>

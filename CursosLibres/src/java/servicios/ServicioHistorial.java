@@ -26,6 +26,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.awt.Font;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.beans.ConjuntoCurso;
 import modelo.beans.ConjuntoGrupo;
 import modelo.beans.Curso;
@@ -48,25 +52,18 @@ public class ServicioHistorial extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, FileNotFoundException, DocumentException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServicioHistorial</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServicioHistorial at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        Enumeration<String> e = request.getParameterNames();
+        String p = e.nextElement();
+        modelo.beans.ConjuntoHistorial ch = new modelo.beans.ConjuntoHistorial();
+        crearPDF(ch.buscarHistorialID(Integer.parseInt(request.getParameter(p))));
+        response.sendRedirect("listadoCurso.jsp");
     }
 
-    public static void crearPDF(Matricula matricula) throws FileNotFoundException, DocumentException {
+    public static void crearPDF(List<Matricula> result) throws FileNotFoundException, DocumentException {
         Document documento = new Document();
-        FileOutputStream ficheroPDF = new FileOutputStream("Matricula.pdf");
+        FileOutputStream ficheroPDF = new FileOutputStream("C:/Users/Esteban/Desktop/Historial" + ".pdf");
 
         PdfWriter.getInstance(documento, ficheroPDF);
 
@@ -74,9 +71,9 @@ public class ServicioHistorial extends HttpServlet {
         Paragraph titulo = new Paragraph("Historial de cursos \n\n",
                 FontFactory.getFont("arial", 22, Font.BOLD, BaseColor.BLUE)
         );
-        
+
         documento.add(titulo);
-        
+
         PdfPTable tabla = new PdfPTable(9);
         tabla.addCell("Estudiante_id");
         tabla.addCell("Num_grupo");
@@ -87,8 +84,20 @@ public class ServicioHistorial extends HttpServlet {
         tabla.addCell("Apellido_2");
         tabla.addCell("Nota");
         tabla.addCell("Estado");
-        
-        tabla.addCell(String.valueOf(matricula.getEstudiante_id()));
+
+        for (Matricula matricula : result) {
+            tabla.addCell(String.valueOf(matricula.getEstudiante_id().getId_estudiante()));
+            tabla.addCell(String.valueOf(matricula.getGrupo_num()));
+            tabla.addCell(String.valueOf(obtenerCurso(matricula.getCurso_id()).getAreaTematica_id().getTematica_descrip()));
+            tabla.addCell(obtenerCurso(matricula.getCurso_id()).getCurso_descrip());
+            tabla.addCell(obtenerGrupo(matricula.getGrupo_num()).getProfesor_id().getNombre());
+            tabla.addCell(obtenerGrupo(matricula.getGrupo_num()).getProfesor_id().getApellido1());
+            tabla.addCell(obtenerGrupo(matricula.getGrupo_num()).getProfesor_id().getApellido2());
+            tabla.addCell(String.valueOf(matricula.getNota()));
+            tabla.addCell(matricula.getEstado_id().getEst_descripcion());
+        }
+
+        /*tabla.addCell(String.valueOf(matricula.getEstudiante_id()));
         tabla.addCell(String.valueOf(matricula.getGrupo_num()));
         tabla.addCell(obtenerCurso(matricula.getCurso_id()).getAreaTematica_id().getTematica_descrip());
         tabla.addCell(obtenerCurso(matricula.getCurso_id()).getCurso_descrip());
@@ -96,19 +105,18 @@ public class ServicioHistorial extends HttpServlet {
         tabla.addCell(obtenerGrupo(matricula.getGrupo_num()).getProfesor_id().getApellido1());
         tabla.addCell(obtenerGrupo(matricula.getGrupo_num()).getProfesor_id().getApellido2());
         tabla.addCell(String.valueOf(matricula.getNota()));
-        tabla.addCell(matricula.getEstado_id().getEst_descripcion());
-        
+        tabla.addCell(matricula.getEstado_id().getEst_descripcion());*/
         documento.add(tabla);
-        
+
         documento.close();
     }
-    
-    public static Curso obtenerCurso(int id_curso){
+
+    public static Curso obtenerCurso(int id_curso) {
         ConjuntoCurso obj = new ConjuntoCurso();
         return obj.obtenerCurso(id_curso);
     }
-    
-    public static Grupo obtenerGrupo(int id_grupo){
+
+    public static Grupo obtenerGrupo(int id_grupo) {
         ConjuntoGrupo obj = new ConjuntoGrupo();
         return obj.getGrupo(id_grupo);
     }
@@ -124,8 +132,12 @@ public class ServicioHistorial extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            throws ServletException, IOException, FileNotFoundException {
+        try {
+            processRequest(request, response);
+        } catch (DocumentException ex) {
+            Logger.getLogger(ServicioHistorial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -138,8 +150,12 @@ public class ServicioHistorial extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            throws ServletException, IOException, FileNotFoundException {
+        try {
+            processRequest(request, response);
+        } catch (DocumentException ex) {
+            Logger.getLogger(ServicioHistorial.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

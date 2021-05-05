@@ -43,7 +43,9 @@
                 <%-- <%= ((modelo.beans.ConjuntoPersonas) getServletContext().getAttribute("personas")).getTabla()%> --%>
 
                 ${c.tabla}
-
+                <p>
+                    <a><a href="historial.jsp" >Ir al historial</a> 
+                </p> 
             </div>
             <div style="margin-top: 24px;">
                 <form action="ServicioBorrar">
