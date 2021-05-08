@@ -23,7 +23,7 @@
                 <form method="GET" action="ResultadoAreaTematica.jsp">
                     <p class="let">
                         <label type="label" name="area_tematica">
-                            Digite el area temática o nombre del curso:
+                            Digite el area temática:
                         </label>
                         <input type="text" name="area_tematica"/>
 

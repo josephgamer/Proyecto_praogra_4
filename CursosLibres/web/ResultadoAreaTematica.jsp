@@ -18,7 +18,7 @@
              Enumeration<String> e = request.getParameterNames();
              String p = e.nextElement();
              modelo.beans.ConjuntoCurso c = new modelo.beans.ConjuntoCurso();
-             out.println(c.toStringHTMLBusqueda(request.getParameter(p)));
+             out.println(c.toStringHTMLBusquedaPrueba(request.getParameter(p)));
             %>
         </p>
     </body>

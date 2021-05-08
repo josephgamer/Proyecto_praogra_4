@@ -12,12 +12,15 @@
         <title>Página de registro de profesor</title>
         <link href="css/registroProfesor.css" rel="stylesheet" type="text/css"/>
     </head>
+    <body>
+        <jsp:useBean id="profesores" class="modelo.beans.ConjuntoProfesor" scope="application">
+        </jsp:useBean>
     <div id="wrapper">
         <header>
             <h1>Formulario de registro de profesor</h1>
         </header>
-        <table class="formulario">
-            <body>
+        <form method="GET" action="RegistroProfesor">
+        <table class="formulario" action = "RegistroProfesor"> 
             <tr>
                 <td class="etiqueta">Id:&nbsp;</td>
                 <td class="campo">  
@@ -62,17 +65,21 @@
                 </td>
             </tr>
             <tr>
-                <td class="etiqueta">Especialidad:&nbsp;</td>
+                <td class="etiqueta">Contraseña:&nbsp;</td>
                 <td class="campo"> 
-                    <input name="Especialidad" 
-                           placeholder="(especialidad)"/>
+                    <input name="Contrasena" 
+                           <input name="Contrasena" type="password" 
+                           placeholder="(Escriba una contraseña)"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" class="botones">
-                    <button type="reset">Borrar</button>&nbsp;
                     <button type="submit">Registrar</button>
                 </td>
+                
+                      <p>
+                        <a href="Administrador.jsp" >Volver al login</a>
+                    </p>
                 </div>
                 </body>
 </html>
