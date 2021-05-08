@@ -19,6 +19,7 @@
              String p = e.nextElement();
              modelo.beans.ConjuntoProfesor c = new modelo.beans.ConjuntoProfesor();
              out.println(c.toStringHTMLBusqueda2(request.getParameter(p)));
+             out.println(c);
             %>
         </p>
         <p>
