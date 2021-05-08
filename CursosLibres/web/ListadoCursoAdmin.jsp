@@ -7,7 +7,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-   <head>
+   
+    <head>
         <title>Listado de cursos</title>
         <meta charset="UTF-8">
         <link href="css/listadoCurso.css" rel="stylesheet" type="text/css"/>
@@ -23,7 +24,7 @@
                 <form method="GET" action="ResultadoAreaTematica.jsp">
                     <p class="let">
                         <label type="label" name="area_tematica">
-                            Digite el area temática:
+                            Digite el area temática o nombre del curso:
                         </label>
                         <input type="text" name="area_tematica"/>
 
@@ -32,11 +33,18 @@
 
                     </p>
 
+
                 </form>
             </div>
             <div id="contents">
-                ${c.tabla3}
+                
+                ${c.tabla4}
             </div>
+            <div style="margin-top: 24px;">
+            </div>
+            
+            <a href="registroGrupo.jsp">Agregar grupo</a>
+            
             <footer></footer>
         </div>
     </body>

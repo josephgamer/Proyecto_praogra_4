@@ -42,7 +42,6 @@
             </tr>
             <tr>
                 <td colspan="2" class="botones">
-                    <button type="reset">Borrar</button>&nbsp;
                     <button type="submit">Registrar</button>
                 </td>
                 </div>
