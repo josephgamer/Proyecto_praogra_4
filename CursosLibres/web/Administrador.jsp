@@ -26,7 +26,7 @@
                <div id="contents">
                    <h2> <strong>Listados</strong></h2>
                    <p>
-                       <a href="listadoCurso.jsp">Lista de cursos</a>
+                       <a href="ListadoCursoAdmin.jsp">Lista de cursos</a>
                 </p>
                 <p>
                     <a href="listadoProfesor.jsp">Lista de profesores</a>
