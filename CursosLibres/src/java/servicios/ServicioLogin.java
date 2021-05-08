@@ -7,14 +7,14 @@ package servicios;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-//import javax.servlet.ServletException;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+//import jakarta.servlet.ServletException;
+//import jakarta.servlet.http.HttpServlet;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
 import modelo.beans.Usuario;
 
@@ -59,10 +59,10 @@ public class ServicioLogin extends HttpServlet {
             u = cu.obtenerRol(request.getParameter(username), request.getParameter(password));
             switch(u.getRol_id().getId_rol()){
                 case 1: 
-                    response.sendRedirect("listadoCurso.jsp");
+                    response.sendRedirect("Administrador.jsp");
                     break;
                 case 2:
-                    response.sendRedirect("listadoProfesor.jsp");
+                    response.sendRedirect("listadoProfesor.jsp"); //ver grupos a su cargo
                     break;
                 case 3:
                     response.sendRedirect("listadoCurso.jsp");
