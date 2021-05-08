@@ -11,18 +11,21 @@ import java.io.PrintWriter;
 //import javax.servlet.http.HttpServlet;
 //import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpServletResponse;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
-import modelo.beans.Usuario;
+import modelo.beans.Estado;
+import modelo.beans.Estudiante;
+import modelo.beans.Matricula;
 
 /**
  *
  * @author Esteban
  */
-public class ServicioLogin extends HttpServlet {
+public class ServicioNota extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,46 +39,40 @@ public class ServicioLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        modelo.beans.ConjuntoUsuario cu = new modelo.beans.ConjuntoUsuario();
+        modelo.beans.ConjuntoNota cn = new modelo.beans.ConjuntoNota();
         Enumeration<String> e = request.getParameterNames();
-        String username = null;
-        String password = null;
+        String ced = null;
+        String nota = null;
         while (e.hasMoreElements()) {
             String p = e.nextElement();
-            if (username == null) {
-                username = p;
-                p = null;
-            }
             
-            if (password == null) {
-                password = p;
-                p = "";
+            if (nota == null) {
+                nota = p;
+                p = null;
                 
             }
-        }
-        
-        if (cu.existeUsuario(request.getParameter(username), request.getParameter(password))) {
-            Usuario u = new Usuario();
-            u = cu.obtenerRol(request.getParameter(username), request.getParameter(password));
-            switch(u.getRol_id().getId_rol()){
-                case 1: 
-                    response.sendRedirect("listadoCurso.jsp");
-                    break;
-                case 2:
-                    request.getSession(true).setAttribute("cedula", request.getParameter(username));
-                    response.sendRedirect("CursosAsignados.jsp");
-                    break;
-                case 3:
-                    response.sendRedirect("listadoCurso.jsp");
-                    break;
-                default:
-                    response.sendRedirect("index.jsp");
-        }
             
-        } else {
-            response.sendRedirect("index.jsp");
+            if (ced == null) {
+                ced = p;
+                p = "";
+            }
+            
         }
-        
+        Matricula m = new Matricula();
+        Estudiante est = new Estudiante();
+        est.setId_estudiante(Integer.parseInt(request.getParameter(ced)));
+        Estado ee = new Estado();
+        m.setNota(Integer.parseInt(request.getParameter(nota)));
+        m.setEstudiante_id(est);
+        if (m.getNota() >= 70) {
+            ee.setId_estado(1);
+            m.setEstado_id(ee);
+        } else {
+            ee.setId_estado(2);
+            m.setEstado_id(ee);
+        }
+        cn.actualizarNota(m.getEstudiante_id().getId_estudiante(), m);
+        response.sendRedirect("CursosAsignados.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -16,6 +16,10 @@
         <servlet-name>ServicioMatricula</servlet-name>
         <servlet-class>servicios.ServicioMatricula</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServicioNota</servlet-name>
+        <servlet-class>servicios.ServicioNota</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServicioHistorial</servlet-name>
         <url-pattern>/ServicioHistorial</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ServicioMatricula</servlet-name>
         <url-pattern>/ServicioMatricula</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServicioNota</servlet-name>
+        <url-pattern>/ServicioNota</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
