@@ -65,6 +65,8 @@
                 <td colspan="2" class="botones">
                     <button type="submit">Registrar</button>
                 </td>
-                </div>
-                </body>
-                </html>
+        </table>
+    </form>
+</div>
+</body>
+</html>
