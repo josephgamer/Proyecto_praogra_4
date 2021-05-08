@@ -59,7 +59,7 @@ public class ServicioLogin extends HttpServlet {
             u = cu.obtenerRol(request.getParameter(username), request.getParameter(password));
             switch(u.getRol_id().getId_rol()){
                 case 1: 
-                    response.sendRedirect("listadoCurso.jsp");
+                    response.sendRedirect("Administrador.jsp");
                     break;
                 case 2:
                     request.getSession(true).setAttribute("cedula", request.getParameter(username));

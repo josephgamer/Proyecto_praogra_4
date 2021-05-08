@@ -6,28 +6,30 @@
 package servicios;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import javax.servlet.ServletException;
+//import javax.servlet.annotation.WebServlet;
 //import javax.servlet.http.HttpServlet;
 //import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpServletResponse;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.SQLException;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import modelo.beans.ConjuntoEstudiantes;
-import modelo.beans.Estudiante;
-import modelo.beans.Rol;
-import modelo.beans.Usuario;
+import modelo.beans.AreaTematica;
+import modelo.beans.ConjuntoCurso;
+import modelo.beans.Curso;
 
 /**
  *
- * @author Esteban
+ * @author YENDRI
  */
-public class RegistroEstudiante extends HttpServlet {
+@WebServlet(name = "ServRegistroCurso", urlPatterns = {"/ServRegistroCurso"})
+public class ServRegistroCurso extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,31 +44,20 @@ public class RegistroEstudiante extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         System.out.println(request.getParameter("Id"));
-        System.out.println(request.getParameter("Nombre"));
-        System.out.println(request.getParameter("Apellido1"));
-        System.out.println(request.getParameter("Apellido2"));
-        Estudiante student = new Estudiante();
-        Rol rol = new Rol();
-        Date date = new Date();
-        rol.setDescripcion("Estudiante");
-        rol.setId_rol(3);
-        student.setId_estudiante(Integer.parseInt(request.getParameter("Id")));
-        student.setNombre(request.getParameter("Nombre"));
-        student.setApellido1(request.getParameter("Apellido1"));
-        student.setApellido2(request.getParameter("Apellido2"));
-        student.setEmail(request.getParameter("Correo"));
-        student.setTelefono(request.getParameter("Telefono"));
-        Usuario user = new Usuario();
-        user.setActivo(false);
-        user.setClave(request.getParameter("Contrasena"));
-        user.setId_usuario(request.getParameter("Id"));
-        user.setRol_id(rol);
-        user.setUltimo_acceso(date);
-        student.setUsuario_id(user);
-        ConjuntoEstudiantes ce
-                    = (ConjuntoEstudiantes) getServletContext().getAttribute("estudiantes");
-        ce.agregar(student);
-        response.sendRedirect("index.jsp");
+        System.out.println(request.getParameter("Descripcion"));
+        System.out.println(request.getParameter("Tematica"));
+        Curso curso = new Curso();
+        AreaTematica area = new AreaTematica();
+        
+        curso.setId_curso(Integer.parseInt(request.getParameter("Id")));
+        curso.setCurso_descrip(request.getParameter("Descripcion"));
+        area.setTematica_descrip(request.getParameter("Tematica"));
+        
+     
+        ConjuntoCurso cc
+                = (ConjuntoCurso) getServletContext().getAttribute("cursos");
+        cc.agregar(curso);
+        response.sendRedirect("Administrador.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -84,7 +75,7 @@ public class RegistroEstudiante extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(RegistroEstudiante.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServRegistroCurso.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -102,7 +93,7 @@ public class RegistroEstudiante extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(RegistroEstudiante.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ServRegistroCurso.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

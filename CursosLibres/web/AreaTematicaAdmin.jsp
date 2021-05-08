@@ -1,11 +1,11 @@
 <%-- 
-    Document   : ResultadoAreaTematica
-    Created on : 03/05/2021, 03:06:07 PM
-    Author     : Esteban
+    Document   : AreaTematicaAdmin
+    Created on : 08/05/2021, 10:08:23 AM
+    Author     : YENDRI
 --%>
 
+<%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.Enumeration" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +18,7 @@
              Enumeration<String> e = request.getParameterNames();
              String p = e.nextElement();
              modelo.beans.ConjuntoCurso c = new modelo.beans.ConjuntoCurso();
-             out.println(c.toStringHTMLBusquedaPrueba(request.getParameter(p)));
+             out.println(c.toStringHTMLBusquedaAdmin(request.getParameter(p)));
             %>
         </p>
     </body>

@@ -1,14 +1,13 @@
 <%-- 
-    Document   : ResultadoAreaTematica
-    Created on : 03/05/2021, 03:06:07 PM
-    Author     : Esteban
+    Document   : ResultadoNombreProfesor
+    Created on : 08/05/2021, 10:21:19 AM
+    Author     : Gabriela Gutierrez L
 --%>
-
+<%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.Enumeration" %>
 <!DOCTYPE html>
 <html>
-    <head>
+   <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -17,8 +16,8 @@
             <%
              Enumeration<String> e = request.getParameterNames();
              String p = e.nextElement();
-             modelo.beans.ConjuntoCurso c = new modelo.beans.ConjuntoCurso();
-             out.println(c.toStringHTMLBusquedaPrueba(request.getParameter(p)));
+             modelo.beans.ConjuntoProfesor c = new modelo.beans.ConjuntoProfesor();
+             out.println(c.toStringHTMLBusqueda(request.getParameter(p)));
             %>
         </p>
     </body>
