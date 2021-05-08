@@ -19,6 +19,24 @@
             <header>
                 <h1>Listado de profesores</h1>
             </header>
+            
+             <div id="etiquetas">
+                <form method="GET" action="ResultadoNombreProfesor.jsp">
+                    <p class="let">
+                        <label type="label" name="nombre_profesor">
+                            Digite el nombre del profesor:
+                        </label>
+                        <input type="text" name="nombre_profesor"/>
+
+
+                        <button type="submit">Buscar</button>
+
+                    </p>
+
+
+                </form>
+            </div>
+            
             <div id="contents">
                 <!-- Un comentario HTML -->
                 <%-- Un comentario JSP --%>
@@ -28,11 +46,6 @@
                 
                 ${profesor.tabla}
 
-            </div>
-            <div style="margin-top: 24px;">
-                <form action="ServicioBorrar">
-                    <button>Borrar todos</button>
-                </form>
             </div>
             <footer></footer>
         </div>
