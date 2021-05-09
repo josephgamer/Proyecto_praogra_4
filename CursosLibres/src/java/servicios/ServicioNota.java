@@ -7,15 +7,15 @@ package servicios;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.ServletException;
+//import javax.servlet.http.HttpServlet;
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
 
-//import jakarta.servlet.ServletException;
-//import jakarta.servlet.http.HttpServlet;
-//import jakarta.servlet.http.HttpServletRequest;
-//import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
 import modelo.beans.Estado;
 import modelo.beans.Estudiante;
@@ -59,6 +59,7 @@ public class ServicioNota extends HttpServlet {
             
         }
         Matricula m = new Matricula();
+        m.setGrupo_num(Integer.parseInt(request.getSession(true).getAttribute("numGrupo").toString()));
         Estudiante est = new Estudiante();
         est.setId_estudiante(Integer.parseInt(request.getParameter(ced)));
         Estado ee = new Estado();

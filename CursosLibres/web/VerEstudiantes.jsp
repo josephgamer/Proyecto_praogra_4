@@ -18,6 +18,7 @@
             String p = e.nextElement();
             modelo.beans.ConjuntoNota cn = new modelo.beans.ConjuntoNota();
             out.println(cn.toStringHTMLVerEstudiantes(Integer.parseInt(request.getParameter(p))));
+            request.getSession(true).setAttribute("numGrupo", request.getParameter(p));
         %>
         
         <p>
