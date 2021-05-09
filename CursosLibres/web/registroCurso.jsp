@@ -25,7 +25,7 @@
                         <td class="etiqueta">Id:&nbsp;</td>
                         <td class="campo">  
                             <input type="number" name="Id"
-                                   min=100010001 max=999999999
+                                   min=1
                                    placeholder="(id)"/>
                         </td>
                     </tr>
@@ -39,7 +39,7 @@
                     <tr>
                         <td class="etiqueta">Tematica:&nbsp;</td>
                         <td class="campo">  
-                            <input name="Area Tematica" 
+                            <input name="Tematica" 
                                    placeholder="(area tematica)"/>
                         </td>
                     </tr>

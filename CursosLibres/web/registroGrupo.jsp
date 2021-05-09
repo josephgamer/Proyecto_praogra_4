@@ -16,8 +16,23 @@
         <header>
             <h1>Formulario de registro de grupo</h1>
         </header>
-        <table class="formulario">
+          <form method="GET" action="ServicioRegistroGrupo">
+        <table class="formulario" action="ServicioRegistroGrupo">
             <body>
+         <jsp:useBean id="grupos" class="modelo.beans.ConjuntoGrupo" scope="application">
+        </jsp:useBean>
+                
+                        
+          <jsp:useBean id="horarios" class="modelo.beans.ConjuntoHorario" scope="application">
+        </jsp:useBean>
+                 <tr>
+                <td class="etiqueta">Id Curso:&nbsp;</td>
+                <td class="campo">  
+                    <input type="number" name="IdCurso"
+                           min=1
+                           placeholder="(id Curso)"/>
+                </td>
+            </tr>
             <tr>
                 <td class="etiqueta">Dia:&nbsp;</td>
                 <td class="campo">  
@@ -34,31 +49,17 @@
                 </td>
             </tr>
             <tr>
-                <td class="etiqueta">Numero grupo:&nbsp;</td>
+                <td class="etiqueta">NumeroGrupo:&nbsp;</td>
                 <td class="campo">  
-                    <input name="Numero de grupo" 
+                    <input name="NumeroGrupo" 
                            placeholder="(numero de grupo)"/>
                 </td>
             </tr>
             <tr>
-                <td class="etiqueta">Apellido1:&nbsp;</td>
+                <td class="etiqueta">Id Profesor:&nbsp;</td>
                 <td class="campo">  
-                    <input name="Apellido1" 
-                           placeholder="(apellido1)"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="etiqueta">Apellido2:&nbsp;</td>
-                <td class="campo">  
-                    <input name="Apellido2" 
-                           placeholder="(apellido2)"/>
-                </td>
-            </tr>
-            <tr>
-                <td class="etiqueta">Nombre:&nbsp;</td>
-                <td class="campo">  
-                    <input name="Nombre" 
-                           placeholder="(nombre)"/>
+                    <input name="IdProfesor" 
+                           placeholder="(id Profesor)"/>
                 </td>
             </tr>
             <tr>

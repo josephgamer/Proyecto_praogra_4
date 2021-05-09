@@ -10,16 +10,16 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+//import jakarta.servlet.ServletException;
+//import jakarta.servlet.annotation.WebServlet;
+//import jakarta.servlet.http.HttpServlet;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
 import modelo.beans.AreaTematica;
 import modelo.beans.ConjuntoCurso;
 import modelo.beans.Curso;
@@ -43,19 +43,18 @@ public class ServRegistroCurso extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        System.out.println(request.getParameter("Id"));
-        System.out.println(request.getParameter("Descripcion"));
-        System.out.println(request.getParameter("Tematica"));
+ 
         Curso curso = new Curso();
         AreaTematica area = new AreaTematica();
+        area.setTematica_descrip(request.getParameter("Tematica"));
+        
+        ConjuntoCurso cc = (ConjuntoCurso) getServletContext().getAttribute("cursos");
+        int idArea = cc.agregarTematica(area);
         
         curso.setId_curso(Integer.parseInt(request.getParameter("Id")));
         curso.setCurso_descrip(request.getParameter("Descripcion"));
-        area.setTematica_descrip(request.getParameter("Tematica"));
+        curso.setIdTematica(idArea);
         
-     
-        ConjuntoCurso cc
-                = (ConjuntoCurso) getServletContext().getAttribute("cursos");
         cc.agregar(curso);
         response.sendRedirect("Administrador.jsp");
     }
