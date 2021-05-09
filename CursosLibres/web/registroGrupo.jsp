@@ -17,7 +17,7 @@
             <h1>Formulario de registro de grupo</h1>
         </header>
           <form method="GET" action="ServicioRegistroGrupo">
-        <table class="formulario" action="ServicioRegistroGrupo">
+        <table class="formulario">
             <body>
          <jsp:useBean id="grupos" class="modelo.beans.ConjuntoGrupo" scope="application">
         </jsp:useBean>

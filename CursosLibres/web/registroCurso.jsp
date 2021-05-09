@@ -39,7 +39,7 @@
                     <tr>
                         <td class="etiqueta">Tematica:&nbsp;</td>
                         <td class="campo">  
-                            <input name="Tematica" 
+                            <input name="Tematica" id="Tematica"
                                    placeholder="(area tematica)"/>
                         </td>
                     </tr>
