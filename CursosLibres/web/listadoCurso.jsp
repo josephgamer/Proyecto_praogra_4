@@ -43,14 +43,13 @@
                 <%-- <%= ((modelo.beans.ConjuntoPersonas) getServletContext().getAttribute("personas")).getTabla()%> --%>
 
                 ${c.tabla}
+                <%
+                  String p = request.getSession(true).getAttribute("cedula").toString();
+                  request.getSession(true).setAttribute("ced", p);
+                %>
                 <p>
                     <a><a href="historial.jsp" >Ir al historial</a> 
                 </p> 
-            </div>
-            <div style="margin-top: 24px;">
-                <form action="ServicioBorrar">
-                    <button>Borrar todos</button>
-                </form>
             </div>
             <footer></footer>
         </div>

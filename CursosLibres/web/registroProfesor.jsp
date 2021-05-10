@@ -15,6 +15,8 @@
     <body>
         <jsp:useBean id="profesores" class="modelo.beans.ConjuntoProfesor" scope="application">
         </jsp:useBean>
+        <jsp:useBean id="especialidad" class="modelo.beans.ConjuntoEspecialidad" scope="application">
+        </jsp:useBean>
         <div id="wrapper">
             <header>
                 <h1>Formulario de registro</h1>
@@ -70,6 +72,17 @@
                         <td class="campo"> 
                             <input name="Contrasena" type="password" 
                                    placeholder="Escriba una contraseña"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="areaTematica"> Seleccione area del profesor:</td>
+                        <td>
+                            <select id="area_te" size="1" name = "area">
+                                <%
+                                  modelo.beans.ConjuntoAreaTematica ca = new modelo.beans.ConjuntoAreaTematica();
+                                  out.println(ca.verAreas());
+                                %>
+                            </select>
                         </td>
                     </tr>
                     <tr>

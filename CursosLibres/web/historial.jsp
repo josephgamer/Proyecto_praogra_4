@@ -13,7 +13,7 @@
         <link href="css/historial.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <jsp:useBean id="h" class="modelo.beans.ConjuntoCurso" scope="application">
+        <jsp:useBean id="h" class="modelo.beans.ConjuntoHistorial" scope="application">
         </jsp:useBean>
         <div id="wrapper">
             <header>
@@ -23,7 +23,13 @@
                 <!-- Un comentario HTML -->
                 <%-- Un comentario JSP --%>
 
-                ${h.tabla}
+                
+                <%
+                modelo.beans.ConjuntoHistorial ch = new modelo.beans.ConjuntoHistorial();
+                out.println(ch.mostrarHistorial(Integer.parseInt(
+                 request.getSession(true).getAttribute("ced").toString()
+                )));
+                %>
 
             </div>
             <div style="margin-top: 24px;">

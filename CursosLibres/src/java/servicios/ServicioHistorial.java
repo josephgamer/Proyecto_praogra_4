@@ -63,7 +63,7 @@ public class ServicioHistorial extends HttpServlet {
 
     public static void crearPDF(List<Matricula> result) throws FileNotFoundException, DocumentException {
         Document documento = new Document();
-        FileOutputStream ficheroPDF = new FileOutputStream("C:/Users/Esteban/Desktop/Historial" + ".pdf");
+        FileOutputStream ficheroPDF = new FileOutputStream("../Historial" + ".pdf");
 
         PdfWriter.getInstance(documento, ficheroPDF);
 

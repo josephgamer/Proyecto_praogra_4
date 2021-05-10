@@ -66,6 +66,7 @@ public class ServicioLogin extends HttpServlet {
                     response.sendRedirect("CursosAsignados.jsp");
                     break;
                 case 3:
+                    request.getSession(true).setAttribute("cedula", request.getParameter(username));
                     response.sendRedirect("listadoCurso.jsp");
                     break;
                 default:

@@ -16,13 +16,15 @@ import java.util.logging.Logger;
 //import javax.servlet.http.HttpServlet;
 //import javax.servlet.http.HttpServletRequest;
 //import javax.servlet.http.HttpServletResponse;
-import modelo.beans.ConjuntoProfesor;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import modelo.beans.AreaTematica;
+import modelo.beans.ConjuntoEspecialidad;
 import modelo.beans.ConjuntoProfesor;
+import modelo.beans.Especialidad;
 import modelo.beans.Profesor;
 import modelo.beans.Rol;
 import modelo.beans.Usuario;
@@ -55,14 +57,19 @@ public class RegistroProf extends HttpServlet {
         Profesor profesor = new Profesor();
         Rol rol = new Rol();
         Date date = new Date();
+        AreaTematica area = new AreaTematica();
+        Especialidad especialidad = new Especialidad();
+        area.setId_area(Integer.parseInt(request.getParameter("area")));
         rol.setDescripcion("Profesor");
-        rol.setId_rol(3);
+        rol.setId_rol(2);
         profesor.setId_profesor(Integer.parseInt(request.getParameter("Id")));
         profesor.setApellido1(request.getParameter("Apellido1"));
         profesor.setApellido2(request.getParameter("Apellido2"));
         profesor.setNombre(request.getParameter("Nombre"));
         profesor.setTelefono(request.getParameter("Telefono"));
         profesor.setEmail(request.getParameter("Correo"));
+        especialidad.setArea_tematica_id(area);
+        especialidad.setProfe_id_profe(profesor);
         
         Usuario user = new Usuario();
         user.setActivo(false);
@@ -71,9 +78,12 @@ public class RegistroProf extends HttpServlet {
         user.setRol_id(rol);
         user.setUltimo_acceso(date);
         profesor.setUsuario_id(user);
+        
         ConjuntoProfesor cp
                     = (ConjuntoProfesor) getServletContext().getAttribute("profesores");
-        cp.agregar2(profesor);
+        cp.agregar2(profesor);       
+        ConjuntoEspecialidad ce = (ConjuntoEspecialidad) getServletContext().getAttribute("especialidad");
+        ce.agregarEspecialidad(especialidad);
         response.sendRedirect("Administrador.jsp");
         }
     }
@@ -93,6 +103,7 @@ public class RegistroProf extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
+            System.out.println(ex);
             Logger.getLogger(RegistroProf.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -111,6 +122,7 @@ public class RegistroProf extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
+            System.out.println(ex);
             Logger.getLogger(RegistroProf.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
