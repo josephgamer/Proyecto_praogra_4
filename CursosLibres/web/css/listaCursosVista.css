@@ -4,9 +4,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 09/05/2021, 05:37:00 PM
+    Created on : 09/05/2021, 07:24:53 PM
     Author     : YENDRI
 */
+
 
 body {
 }
@@ -16,7 +17,7 @@ head {
     padding: 4px 24px;
 }
 
-.tablaCursos {
+.tablaCursosAsignados {
     border: none;
     border-top: 2px solid darkslategrey;
     border-bottom: 2px solid darkslategrey;
@@ -24,28 +25,28 @@ head {
     font-size: smaller;
 }
 
-.tablaCursos th,
-.tablaCursos td {
+.tablaCursosAsignados th,
+.tablaCursosAsignados td {
     border: none;
     border-right: 1px solid darkslategrey;
     padding: 4px 12px;
 }
 
-.tablaCursos tr td:nth-child(n+5) {
+.tablaCursosAsignados tr td:nth-child(n+5) {
     border-right: none;
 }
 
-.tablaCursos tbody tr:nth-child(odd) {
+.tablaCursosAsignados tbody tr:nth-child(odd) {
     background-color: #afd1d1;
 }
 
-.tablaCursos th {
+.tablaCursosAsignados th {
     background-color: darkslategrey;
     border: none;
     color: blanchedalmond;
 }
 
-.tablaCursos td {
+.tablaCursosAsignados td {
 }
 
 header {

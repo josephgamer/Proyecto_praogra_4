@@ -4,11 +4,19 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 27 abr. 2021, 11:38:56
+    Created on : 09/05/2021, 04:17:58 PM
     Author     : YENDRI
 */
 
-.historial {
+body {
+}
+
+head {
+    background-color: #f44336;
+    padding: 4px 24px;
+}
+
+.tablaCursos {
     border: none;
     border-top: 2px solid darkslategrey;
     border-bottom: 2px solid darkslategrey;
@@ -16,26 +24,34 @@ and open the template in the editor.
     font-size: smaller;
 }
 
-.historial th,
-.historial td {
+.tablaCursos th,
+.tablaCursos td {
     border: none;
     border-right: 1px solid darkslategrey;
     padding: 4px 12px;
 }
 
-.historial tr td:nth-child(n+5) {
+.tablaCursostr td:nth-child(n+5) {
     border-right: none;
 }
 
-.historial tbody tr:nth-child(odd) {
-    background-color: #b8c8d1;
+.tablaCursos tbody tr:nth-child(odd) {
+    background-color: #afd1d1;
 }
 
-.historial th {
+.tablaCursos th {
     background-color: darkslategrey;
     border: none;
-    color: white;
+    color: blanchedalmond;
 }
 
-.historial td {
+.tablaCursos td {
+}
+
+header {
+    
+}
+
+form {
+    
 }

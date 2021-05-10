@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro de Cursos</title>
-        <link href="css/registroProfesor.css" rel="stylesheet" type="text/css"/>
+        <link href="css/registro.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:useBean id="cursos" class="modelo.beans.ConjuntoCurso" scope="application">
@@ -19,8 +19,8 @@
             <header>
                 <h1>Formulario de Curso</h1>
             </header>
-            <form method="GET" action="ServRegistroCurso">
-                <table class="formulario" action="ServRegistroCurso">
+            <form class='curs' method="GET" action="ServRegistroCurso">
+                <table class="formulario1" action="ServRegistroCurso">
                     <tr>
                         <td class="etiqueta">Id:&nbsp;</td>
                         <td class="campo">  
@@ -50,6 +50,9 @@
                     </tr>
                 </table>
             </form>
+            <p class='volver1'>
+                <a href="Administrador.jsp" >Volver</a>
+            </p>
         </div>
     </body>
 </html>

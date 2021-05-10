@@ -8,7 +8,16 @@ and open the template in the editor.
     Author     : YENDRI
 */
 
-.listadoProfesor {
+body {
+
+}
+
+head {
+    background-color: #f44336;
+    padding: 4px 24px;
+}
+
+.tablaProfesores {
     border: none;
     border-top: 2px solid darkslategrey;
     border-bottom: 2px solid darkslategrey;
@@ -16,26 +25,31 @@ and open the template in the editor.
     font-size: smaller;
 }
 
-.listadoProfesor th,
-.listadoProfesor td {
+.tablaProfesores th,
+.tablaProfesores td {
     border: none;
     border-right: 1px solid darkslategrey;
     padding: 4px 12px;
 }
 
-.listadoProfesor tr td:nth-child(n+5) {
+.tablaProfesores tr td:nth-child(n+5) {
     border-right: none;
 }
 
-.listadoProfesor tbody tr:nth-child(odd) {
-    background-color: #b8c8d1;
+.tablaProfesores tbody tr:nth-child(odd) {
+    background-color: #afd1d1;
 }
 
-.listadoProfesor th {
+.tablaProfesores th {
     background-color: darkslategrey;
     border: none;
-    color: white;
+    color: blanchedalmond;
 }
 
-.listadoProfesor td {
+.tablaProfesores td {
 }
+
+
+form {
+}
+

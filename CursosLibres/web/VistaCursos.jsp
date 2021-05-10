@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="css/listaCursos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:useBean id="c" class="modelo.beans.ConjuntoCurso" scope="application">

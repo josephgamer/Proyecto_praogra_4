@@ -1,5 +1,5 @@
-form {
-  border: 3px solid #f1f1f1;
+
+body {
 }
 
 #wrapper {
@@ -12,7 +12,7 @@ form {
 }
 
 header {
-    background-color: slategray;
+    /*background-color: slategray;*/
     padding: 4px 24px;
 }
 
@@ -27,8 +27,9 @@ nav {
     margin-bottom: 16px;
     padding: 4px 24px;
 }
-  
-  .formulario  {
+
+
+.formulario  {
     border: 1px solid gray;
 }
 
@@ -46,5 +47,132 @@ nav {
 .formulario .botones {
     border-top: 1px solid gray;
     padding: 8px;
+    text-align: center;
+}
+
+.formulario1  {
+    border: 1px solid gray;
+}
+
+.formulario1  td {
+    padding: 4px 16px;
+}
+
+.formulario1 .etiqueta {
+    text-align: right;
+}
+
+.formulario1 .campo {
+}
+
+.formulario1 .botones {
+    border-top: 1px solid gray;
+    padding: 8px;
+    text-align: center;
+}
+
+.formulario2  {
+    border: 1px solid gray;
+}
+
+.formulario2  td {
+    padding: 4px 16px;
+}
+
+.formulario2 .etiqueta {
+    text-align: right;
+}
+
+.formulario2 .campo {
+}
+
+.formulario2 .botones {
+    border-top: 1px solid gray;
+    padding: 8px;
+    text-align: center;
+}
+
+.formulario3  {
+    border: 1px solid gray;
+}
+
+.formulario3  td {
+    padding: 4px 16px;
+}
+
+.formulario3 .etiqueta {
+    text-align: right;
+}
+
+.formulario3 .campo {
+}
+
+.formulario3 .botones {
+    border-top: 1px solid gray;
+    padding: 8px;
+    text-align: center;
+}
+
+.estu {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.curs {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profe {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grup {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+p1 {
+    text-align: center;
+}
+
+.volver {
+    text-align: center;
+}
+
+.volver1 {
+    text-align: center;
+}
+
+.volver2 {
+    text-align: center;
+}
+
+.volver3 {
     text-align: center;
 }

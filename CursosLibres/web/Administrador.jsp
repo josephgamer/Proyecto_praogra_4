@@ -10,9 +10,9 @@
     <head>
         <title>Administrador</title>
         <meta charset="UTF-8">
-        <link href="css/default.css" rel="stylesheet" type="text/css"/>
+        <link href="css/administrador.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body background = "images/fondo.jpg">
         <div id="wrapper">
             <div id="contents">
                 <h2> <strong> Registros </strong></h2>
@@ -23,15 +23,22 @@
                     <a href="registroProfesor.jsp">Registro de profesores</a>
                 </p>
             </div>
-               <div id="contents">
-                   <h2> <strong>Listados</strong></h2>
-                   <p>
-                       <a href="ListadoCursoAdmin.jsp">Lista de cursos</a>
+            <div id="contents">
+                <h2> <strong>Listados</strong></h2>
+                <p>
+                    <a href="ListadoCursoAdmin.jsp">Lista de cursos</a>
                 </p>
                 <p>
                     <a href="listadoProfesor.jsp">Lista de profesores</a>
                 </p>
-                </div>
+            </div>
+            <br>
+            </br>
+            <div>
+                <p>
+                    <a href="index.jsp">Volver a página principal</a>
+                </p>
+            </div>
             <footer></footer>
         </div>
     </body>

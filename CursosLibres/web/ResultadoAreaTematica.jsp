@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="css/listaResultadoArea.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <p>
@@ -20,6 +21,9 @@
              modelo.beans.ConjuntoCurso c = new modelo.beans.ConjuntoCurso();
              out.println(c.toStringHTMLBusquedaPrueba(request.getParameter(p)));
             %>
+        </p>
+        <p>
+            <a href="ListadoCursoAdmin.jsp" >Volver</a>
         </p>
     </body>
 </html>

@@ -11,7 +11,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="css/listadoEstudiante.css" rel="stylesheet" type="text/css"/>
     </head>
+    <header>
+        <h1>Listado de cursos</h1>
+    </header>
+    <br>
+    </br>
     <body>
         <%
             Enumeration<String> e = request.getParameterNames();
@@ -20,7 +26,7 @@
             out.println(cn.toStringHTMLVerEstudiantes(Integer.parseInt(request.getParameter(p))));
             request.getSession(true).setAttribute("numGrupo", request.getParameter(p));
         %>
-        
+
         <p>
             <a href="CursosAsignados.jsp">Volver</a>
         </p>

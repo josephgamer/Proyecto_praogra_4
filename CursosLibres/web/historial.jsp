@@ -10,7 +10,7 @@
     <head>
         <title>Historial de cursos</title>
         <meta charset="UTF-8">
-        <link href="css/historial.css" rel="stylesheet" type="text/css"/>
+        <link href="css/listadoCurso.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:useBean id="h" class="modelo.beans.ConjuntoHistorial" scope="application">

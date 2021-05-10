@@ -10,6 +10,7 @@
    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="css/listaProfesor.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <p>
@@ -19,6 +20,9 @@
              modelo.beans.ConjuntoProfesor c = new modelo.beans.ConjuntoProfesor();
              out.println(c.toStringHTMLBusqueda(request.getParameter(p)));
             %>
+        </p>
+        <p>
+            <a href="listadoProfesor.jsp" >Volver a la lista de profesores</a>
         </p>
     </body>
 </html>

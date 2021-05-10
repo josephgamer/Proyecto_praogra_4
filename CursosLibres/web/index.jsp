@@ -12,7 +12,7 @@
         <title>Inicio de Sesión</title>
         <link href="css/default.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body background-color: black>
         <form action="ServicioLogin" method="post">
             <div class="imgcontainer">
                 <img src="images/descarga.png" alt="Avatar" class="avatar" width="250" height="250">

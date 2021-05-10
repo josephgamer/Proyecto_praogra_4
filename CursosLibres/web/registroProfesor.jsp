@@ -21,8 +21,8 @@
             <header>
                 <h1>Formulario de registro</h1>
             </header>
-            <form method="GET" action="RegistroProf">
-                <table class="formulario" action="RegistroProf">
+            <form class='profe' method="GET" action="RegistroProf">
+                <table class="formulario2" action="RegistroProf">
 
                     <tr>
                         <td class="etiqueta">Id:&nbsp;</td>
@@ -89,13 +89,11 @@
                         <td colspan="2" class="botones">
                             <button type="submit">Registrar</button>
                         </td>
-                    <p>
-                        <a href="index.jsp" >Volver al login</a>
-                    </p>
-
-
                 </table>
             </form>
+            <p class='volver2'>
+                <a href="Administrador.jsp" >Volver</a>
+            </p>
         </div>
     </body>
 </html>

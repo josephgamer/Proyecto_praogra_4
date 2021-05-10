@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-   
+
     <head>
         <title>Listado de cursos</title>
         <meta charset="UTF-8">
@@ -37,14 +37,18 @@
                 </form>
             </div>
             <div id="contents">
-                
+
                 ${c.tabla4}
             </div>
             <div style="margin-top: 24px;">
             </div>
-            
+
             <a href="registroGrupo.jsp">Agregar grupo</a>
-            
+
+            <div>
+                 <a href="index.jsp">Página principal</a>
+            </div>
+
             <footer></footer>
         </div>
     </body>

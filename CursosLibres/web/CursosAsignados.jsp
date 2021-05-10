@@ -11,13 +11,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="css/listaCursosVista.css" rel="stylesheet" type="text/css"/>
     </head>
+    <header>
+        <h1>Listado de profesor</h1>
+    </header>
     <body>
         <%
-        modelo.beans.ConjuntoAsignacionCursos cac = new modelo.beans.ConjuntoAsignacionCursos();
-        out.println(cac.toStringAsignados(Integer.parseInt(request.getSession(true).getAttribute("cedula").toString())));
+            modelo.beans.ConjuntoAsignacionCursos cac = new modelo.beans.ConjuntoAsignacionCursos();
+            out.println(cac.toStringAsignados(Integer.parseInt(request.getSession(true).getAttribute("cedula").toString())));
         %>
-        
+
         <p>
             <a href="index.jsp">Cerrar Sesion</a>
         </p>

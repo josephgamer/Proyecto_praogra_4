@@ -17,9 +17,12 @@
         </jsp:useBean>
         <div id="wrapper">
             <header>
-                <h1>Formulario de registro</h1>
+                <h1 >Formulario de registro</h1>
             </header>
-            <form method="GET" action="RegistroEstudiante">
+            <br>
+            
+            </br>
+            <form class='estu' method="GET" action="RegistroEstudiante">
                 <table class="formulario" action="RegistroEstudiante">
 
                     <tr>
@@ -76,13 +79,11 @@
                         <td colspan="2" class="botones">
                             <button type="submit">Registrar</button>
                         </td>
-                    <p>
-                        <a href="index.jsp" >Volver al login</a>
-                    </p>
-
-
                 </table>
             </form>
+            <p class='volver'>
+                <a href="index.jsp" >Volver al login</a>
+            </p>
         </div>
     </body>
 </html>
